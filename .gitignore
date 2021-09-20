@@ -2,17 +2,17 @@
 *.d
 
 # Other
-.bin
-.ctx
-.xml
-.aof
-.m51
-.xrf
-.dbi
-.lst
-.xdb
-.mac
-.rapp
+*.bin
+*.ctx
+*.xml
+*.aof
+*.m51
+*.xrf
+*.dbi
+*.lst
+*.xdb
+*.mac
+*.rapp
 
 
 # Object files
