@@ -1,6 +1,19 @@
 # Prerequisites
 *.d
 
+# Other
+.BIN
+.ctx
+.XML
+.AOF
+.M51
+.XRF
+.dbi
+.lst
+.xdb
+.mac
+
+
 # Object files
 *.o
 *.ko
