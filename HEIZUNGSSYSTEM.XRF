@@ -1,0 +1,67 @@
+MS-DOS LX51 CODE BANKING LINKER/LOCATOR V05.08.10.309
+
+
+INTER-MODULE CROSS-REFERENCE LISTING
+------------------------------------
+
+          NAME. . . . . . . . USAGE   MODULE NAMES
+          ----------------------------------------
+          ?ADDIEEE  . . . . . CODE    [ADSUIEEE]:  HEIZUNGSSYSTEM
+          ?ADDIEEEX . . . . . CODE    [ADSUIEEE]: 
+          ?COMPIEEE . . . . . CODE    [COMPIEEE]:  HEIZUNGSSYSTEM
+          ?C_INITSEGSTART . . CODE    [_C_INITD]:  C1S
+          ?C_START1 . . . . . CODE    [C1S]:  HEIZUNGSSYSTEM
+          ?DIVIIEEE . . . . . CODE    [DIVIIEEE]:  PRINTFP
+          ?DIVIIEEEX  . . . . CODE    [DIVIIEEE]: 
+          ?MULTIEEE . . . . . CODE    [MULTIEEE]:  POWER10, PRINTFP
+          ?MULTIEEEX  . . . . CODE    [MULTIEEE]: 
+          ?POWER_10_NEG . . . CODE    [POWER10]:  PRINTFP
+          ?printf?FP  . . . . CODE    [PRINTFP]: 
+          ?sprintf?FP . . . . CODE    [PRINTFP]:  HEIZUNGSSYSTEM
+          ?strlen . . . . . . CODE    [STRLEN]:  PRINTFP
+          ?SUBBIEEE . . . . . CODE    [ADSUIEEE]:  HEIZUNGSSYSTEM
+          ?SUBBIEEEX  . . . . CODE    [ADSUIEEE]: 
+          ausgabe . . . . . . CODE    [HEIZUNGSSYSTEM]: 
+          buf . . . . . . . . DATA    [HEIZUNGSSYSTEM]: 
+          currentTemp . . . . DATA    [HEIZUNGSSYSTEM]: 
+          cursorhome  . . . . CODE    [LCD]: 
+          Grundeinstellungen  CODE    [HEIZUNGSSYSTEM]: 
+          HPD_ADDR  . . . . . DATA    [HPD]:  C1S
+          IDATALEN  . . . . . NUMBER  [_C_IDATALEN]:  C1S
+          init  . . . . . . . CODE    [HEIZUNGSSYSTEM]: 
+          initlcd . . . . . . CODE    [LCD]:  HEIZUNGSSYSTEM
+          IPGN0?C . . . . . . CODE    [IPGN0]:  IPGN0_INC
+          IPGN0INC?C  . . . . CODE    [IPGN0_INC]:  PRINTFP
+          IPGN1?C . . . . . . CODE    [IPGN1]:  LCD
+          LCD_PORT  . . . . . DATA    [LCD]: 
+          loeschenlcd . . . . CODE    [LCD]:  HEIZUNGSSYSTEM
+          main  . . . . . . . CODE    [HEIZUNGSSYSTEM]:  C1S
+          maxTemp . . . . . . DATA    [HEIZUNGSSYSTEM]: 
+          minTemp . . . . . . DATA    [HEIZUNGSSYSTEM]: 
+          MV4_RG2SK?C . . . . CODE    [MV_RG2SK4]:  POWER10
+          MV4_XD2RG?C . . . . CODE    [MV_XD2RG4]:  MULTIEEE, DIVIIEEE, ADSUIEEE
+          selectedTemp  . . . DATA    [HEIZUNGSSYSTEM]: 
+          step  . . . . . . . DATA    [HEIZUNGSSYSTEM]: 
+          systemStatus  . . . DATA    [HEIZUNGSSYSTEM]: 
+          TIM1_INIT . . . . . NUMBER  [** UNRESOLVED **]:
+          XPGN0?C . . . . . . CODE    [XPGN0]:  XPGN0_INC
+          XPGN0INC?C  . . . . CODE    [XPGN0_INC]:  PRINTFP
+          XPGN1?C . . . . . . CODE    [XPGN1]:  XPGN1_INC
+          XPGN1INC?C  . . . . CODE    [XPGN1_INC]:  PRINTFP
+          XSTACKLEN . . . . . NUMBER  [** UNRESOLVED **]:
+          _charlcd  . . . . . CODE    [LCD]: 
+          _cursorpos  . . . . CODE    [LCD]: 
+          _END_OP_IEEE?C  . . CODE    [TOOLIEEE]:  MULTIEEE, COMPIEEE, DIVIIEEE, ADSUIEEE
+          _INITP2?  . . . . . NUMBER  [_C_IDATALEN]:  C1S
+          _LCDbefehl  . . . . CODE    [LCD]: 
+          _putchar  . . . . . CODE    [PUTCHAR]:  PRINTFP
+          _STACK  . . . . . . IDATA   [LCD]:  C1S
+          _textlcd  . . . . . CODE    [LCD]:  HEIZUNGSSYSTEM
+          _warte100u  . . . . CODE    [LCD]: 
+          __IEEE_END_RESULT__ CODE    [TOOLIEEE]:  MULTIEEE, DIVIIEEE, ADSUIEEE
+          __IEEE_GET_EXP_SET_MCODE    [TOOLIEEE]:  MULTIEEE, DIVIIEEE, ADSUIEEE
+          __IEEE_RESULT_NULL__CODE    [TOOLIEEE]:  MULTIEEE, DIVIIEEE, ADSUIEEE
+          __IEEE_TRAP_DEB__ . CODE    [TOOLIEEE]:  MULTIEEE, DIVIIEEE, ADSUIEEE
+          __IEEE_TRAP_NAN__ . CODE    [TOOLIEEE]:  MULTIEEE, DIVIIEEE, ADSUIEEE
+          __PGN0_INC__  . . . CODE    [PGN0_INC]:  IPGN0_INC, XPGN0_INC
+          __PGN1_INC__  . . . CODE    [PGN1_INC]:  XPGN1_INC

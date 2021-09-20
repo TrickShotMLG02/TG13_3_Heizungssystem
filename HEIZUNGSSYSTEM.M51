@@ -1,0 +1,829 @@
+LX51 CODE BANKING LINKER/LOCATOR V05.08.10.309                                 09/20/21  10:50:53
+MS-DOS LX51 CODE BANKING LINKER/LOCATOR V05.08.10.309,  INVOKED BY:
+C:\Raisonance\Ride\Bin\LX51.EXE E:\Microcontroller_C\Smart Home\lcd.obj,E:\Microcontroller_C\Smar&
+t Home\Heizungssystem.obj TO(E:\Microcontroller_C\Smart Home\Heizungssystem.aof) LIBPATH(C:\Raiso&
+nance\Ride\Lib\51) GENERATEDEPFILE MAP IX RS(256) RSI(128) CSIZE(65536) XSIZE(65536) DEFN(XSTACKL&
+EN,256) DEFN(TIM1_INIT,E8h) CO(0) DT(0) ID(0) XD(0) BI(0) ABSCODEOFFS(0) XMLM(No,E:\Microcontroll&
+er_C\Smart Home\Heizungssystem-modules.Standard.xml) XMLF(No,8000,E:\Microcontroller_C\Smart Home&
+\Heizungssystem-flash.Standard.xml) XML(E:\Microcontroller_C\Smart Home\Heizungssystem.Standard.x&
+ml) XMLRIDE(E:\Microcontroller_C\Smart Home\Heizungssystem-globals.Standard.xml) 
+
+
+MEMORY MODEL: SMALL WITH IEEE STANDARD FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED
+  E:\MICROCONTROLLER_C\SMART HOME\LCD.OBJ(LCD)
+  E:\MICROCONTROLLER_C\SMART HOME\HEIZUNGSSYSTEM.OBJ(HEIZUNGSSYSTEM)
+  C:\Raisonance\Ride\Lib\51\RC51FPS.LIB(ADSUIEEE)
+  C:\Raisonance\Ride\Lib\51\RC51FPS.LIB(PRINTFP)
+  C:\Raisonance\Ride\Lib\51\RC51FPS.LIB(DIVIIEEE)
+  C:\Raisonance\Ride\Lib\51\RC51FPS.LIB(TOOLIEEE)
+  C:\Raisonance\Ride\Lib\51\RC51FPS.LIB(POWER10)
+  C:\Raisonance\Ride\Lib\51\RC51FPS.LIB(COMPIEEE)
+  C:\Raisonance\Ride\Lib\51\RC51FPS.LIB(MULTIEEE)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(C1S)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(IPGN1)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(XPGN0_INC)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(XPGN1_INC)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(IPGN0_INC)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(PGN0_INC)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(PGN1_INC)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(MV_RG2SK4)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(MV_XD2RG4)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(PUTCHAR)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(STRLEN)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(HPD)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(_C_INITD)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(_C_IDATALEN)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(XPGN0)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(XPGN1)
+  C:\Raisonance\Ride\Lib\51\RC51S.LIB(IPGN0)
+
+
+LINK MAP OF MODULE: E:\MICROCONTROLLER_C\SMART HOME\HEIZUNGSSYSTEM.AOF (HEIZUNGSSYSTEM)
+
+    TYPE     BASE       LENGTH    RELOCATION     SEGMENT NAME
+    ----     ----       ------    ----------     ------------
+
+    * * * * * * *   DATA/IDATA    M E M O R Y   * * * * * * *
+    REG      0000H      0008H     ABSOLUTE       "REG BANK 0"
+    DATA     0008H      0029H     UNIT           ?DT?HEIZUNGSSYSTEM
+    DATA     0031H      0004H     OVERLAID UNIT  _DGROUP01_
+             0031H      0004H     -------------  ?DT?_textlcd?LCD
+    DATA     0035H      0001H     UNIT           ?DT?LCD
+    IDATA    0036H      0001H     * * STACK * *  _STACK
+
+    * * * * * * *   CODE          M E M O R Y   * * * * * * *
+    CODE     0000H      0003H     ABSOLUTE       
+    CODE     0003H      0019H     INBLOCK        ?PR?MOVES_NOIL?LIB51
+    CODE     001CH      00B2H     INBLOCK        ?PR?MOVES?LIB51
+    CODE     00CEH      004FH     UNIT           ?PR?LIB51
+    CODE     011DH      0013H     UNIT           ?PR?PUTCHAR?LIB51
+    CODE     0130H      0066H     UNIT           ?PR?C51_STARTUP?
+    CODE     0196H      04CDH     UNIT           ?PR?IEEE?LIB51
+    CODE     0663H      001FH     UNIT           ?PR?_warte100u?LCD
+    CODE     0682H      0021H     UNIT           ?PR?_LCDbefehl?LCD
+    CODE     06A3H      0037H     UNIT           ?PR?initlcd?LCD
+    CODE     06DAH      0005H     UNIT           ?PR?loeschenlcd?LCD
+    CODE     06DFH      0024H     UNIT           ?PR?_charlcd?LCD
+    CODE     0703H      0007H     UNIT           ?PR?_cursorpos?LCD
+    CODE     070AH      0005H     UNIT           ?PR?cursorhome?LCD
+    CODE     070FH      0058H     UNIT           ?PR?_textlcd?LCD
+    CODE     0767H      0019H     UNIT           ?PR?Grundeinstellungen?HEIZUNGSSYSTEM
+    CODE     0780H      000CH     UNIT           ?PR?init?HEIZUNGSSYSTEM
+    CODE     078CH      0029H     UNIT           ?STR?HEIZUNGSSYSTEM
+    CODE     07B5H      0022H     UNIT           _C_INITD?CD
+             07D7H      0029H                    *** GAP ***
+    CODE     0800H      07B1H     INBLOCK        ?PR?PRINT?LIB51
+    CODE     0FB1H      0050H     UNIT           ?PR?ausgabe?HEIZUNGSSYSTEM
+    CODE     1001H      00ACH     UNIT           ?PR?main?HEIZUNGSSYSTEM
+
+EXECUTABLE SUMMARY:
+-------------------
+    Total INTERNAL RAM storage requirement:  0036H (54)
+    Total EXTERNAL RAM storage requirement:  0000H (0)
+    Total     CODE     storage requirement:  1084H (4228)
+Note:  Summary does not include dynamic stack requirements
+
+
+REFERENCE MAP OF MODULE: E:\MICROCONTROLLER_C\SMART HOME\HEIZUNGSSYSTEM.AOF (HEIZUNGSSYSTEM)
+
+SEGMENT                           BI_GROUP            DT_GROUP             ID_GROUP             XD_GROUP
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH     START    LENGTH     START    LENGTH
+--------------------------------------------------------------------------------------
+
+?PR?cursorhome?LCD             ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_LCDbefehl?LCD
+
+?PR?_LCDbefehl?LCD             ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_warte100u?LCD
+
+?PR?_warte100u?LCD             ---------------     ---------------     ---------------     ---------------
+
+?PR?main?HEIZUNGSSYSTEM        ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?Grundeinstellungen?HEIZUNGSSYSTEM
+  +--> ?PR?initlcd?LCD
+  +--> ?PR?loeschenlcd?LCD
+  +--> ?PR?init?HEIZUNGSSYSTEM
+  +--> ?PR?ausgabe?HEIZUNGSSYSTEM
+
+?PR?Grundeinstellungen?HEIZUNGSSYSTEM---------------     ---------------     ---------------     ---------------
+
+?PR?initlcd?LCD                ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_LCDbefehl?LCD
+  +--> ?PR?_warte100u?LCD
+
+?PR?loeschenlcd?LCD            ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_LCDbefehl?LCD
+
+?PR?init?HEIZUNGSSYSTEM        ---------------     ---------------     ---------------     ---------------
+
+?PR?ausgabe?HEIZUNGSSYSTEM     ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_textlcd?LCD
+
+?PR?_textlcd?LCD               ---------------     0031H    0004H     ---------------     ---------------
+  +--> ?PR?_cursorpos?LCD
+  +--> ?PR?_charlcd?LCD
+  +--> ?PR?_warte100u?LCD
+
+?PR?_cursorpos?LCD             ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_LCDbefehl?LCD
+
+?PR?_charlcd?LCD               ---------------     ---------------     ---------------     ---------------
+  +--> ?PR?_warte100u?LCD
+
+SYMBOL TABLE FOR E:\MICROCONTROLLER_C\SMART HOME\HEIZUNGSSYSTEM.AOF(LCD)
+-------------------------------------------------------------------------
+
+    VALUE              TYPE               NAME
+    -----              ----               ----
+
+	-------            MODULE             lcd
+	C:0000H            SYMBOL             _ICE_DUMMY_
+	C:070AH            PUBLIC             cursorhome
+	C:06DAH            PUBLIC             loeschenlcd
+	C:0663H            PUBLIC             _warte100u
+	C:0703H            PUBLIC             _cursorpos
+	C:06DFH            PUBLIC             _charlcd
+	C:0682H            PUBLIC             _LCDbefehl
+	C:070FH            PUBLIC             _textlcd
+	C:06A3H            PUBLIC             initlcd
+	D:0035H            PUBLIC             LCD_PORT
+	D:0081H            SYMBOL             __SP__
+	B:00F8H            SYMBOL             SPIEN
+	B:00F9H            SYMBOL             TXBMT
+	B:00FAH            SYMBOL             NSSMD0
+	B:00FBH            SYMBOL             NSSMD1
+	B:00FCH            SYMBOL             RXOVRN
+	B:00FDH            SYMBOL             MODF
+	B:00FEH            SYMBOL             WCOL
+	B:00FFH            SYMBOL             SPIF
+	B:00E8H            SYMBOL             AD0CM0
+	B:00E9H            SYMBOL             AD0CM1
+	B:00EAH            SYMBOL             AD0CM2
+	B:00EBH            SYMBOL             AD0WINT
+	B:00ECH            SYMBOL             AD0BUSY
+	B:00EDH            SYMBOL             AD0INT
+	B:00EEH            SYMBOL             AD0TM
+	B:00EFH            SYMBOL             AD0EN
+	B:00D8H            SYMBOL             CCF0
+	B:00D9H            SYMBOL             CCF1
+	B:00DAH            SYMBOL             CCF2
+	B:00DBH            SYMBOL             CCF3
+	B:00DCH            SYMBOL             CCF4
+	B:00DEH            SYMBOL             CR
+	B:00DFH            SYMBOL             CF
+	B:00D0H            SYMBOL             P
+	B:00D1H            SYMBOL             F1
+	B:00D2H            SYMBOL             OV
+	B:00D3H            SYMBOL             RS0
+	B:00D4H            SYMBOL             RS1
+	B:00D5H            SYMBOL             F0
+	B:00D6H            SYMBOL             AC
+	B:00D7H            SYMBOL             CY
+	B:00C8H            SYMBOL             T2XCLK
+	B:00CAH            SYMBOL             TR2
+	B:00CBH            SYMBOL             T2SPLIT
+	B:00CCH            SYMBOL             T2SOF
+	B:00CDH            SYMBOL             TF2LEN
+	B:00CEH            SYMBOL             TF2L
+	B:00CFH            SYMBOL             TF2H
+	B:00C0H            SYMBOL             SI
+	B:00C1H            SYMBOL             ACK
+	B:00C2H            SYMBOL             ARBLOST
+	B:00C3H            SYMBOL             ACKRQ
+	B:00C4H            SYMBOL             STO
+	B:00C5H            SYMBOL             STA
+	B:00C6H            SYMBOL             TXMODE
+	B:00C7H            SYMBOL             MASTER
+	B:00B8H            SYMBOL             PX0
+	B:00B9H            SYMBOL             PT0
+	B:00BAH            SYMBOL             PX1
+	B:00BBH            SYMBOL             PT1
+	B:00BCH            SYMBOL             PS0
+	B:00BDH            SYMBOL             PT2
+	B:00BEH            SYMBOL             PSPI0
+	B:00A8H            SYMBOL             EX0
+	B:00A9H            SYMBOL             ET0
+	B:00AAH            SYMBOL             EX1
+	B:00ABH            SYMBOL             ET1
+	B:00ACH            SYMBOL             ES0
+	B:00ADH            SYMBOL             ET2
+	B:00AEH            SYMBOL             ESPI0
+	B:00AFH            SYMBOL             EA
+	B:0098H            SYMBOL             RI0
+	B:0099H            SYMBOL             TI0
+	B:009AH            SYMBOL             RB80
+	B:009BH            SYMBOL             TB80
+	B:009CH            SYMBOL             REN0
+	B:009DH            SYMBOL             MCE0
+	B:009FH            SYMBOL             S0MODE
+	B:0088H            SYMBOL             IT0
+	B:0089H            SYMBOL             IE0
+	B:008AH            SYMBOL             IT1
+	B:008BH            SYMBOL             IE1
+	B:008CH            SYMBOL             TR0
+	B:008DH            SYMBOL             TF0
+	B:008EH            SYMBOL             TR1
+	B:008FH            SYMBOL             TF1
+	B:00B7H            SYMBOL             P3_7
+	B:00B6H            SYMBOL             P3_6
+	B:00B5H            SYMBOL             P3_5
+	B:00B4H            SYMBOL             P3_4
+	B:00B3H            SYMBOL             P3_3
+	B:00B2H            SYMBOL             P3_2
+	B:00B1H            SYMBOL             P3_1
+	B:00B0H            SYMBOL             P3_0
+	B:00A7H            SYMBOL             P2_7
+	B:00A6H            SYMBOL             P2_6
+	B:00A5H            SYMBOL             P2_5
+	B:00A4H            SYMBOL             P2_4
+	B:00A3H            SYMBOL             P2_3
+	B:00A2H            SYMBOL             P2_2
+	B:00A1H            SYMBOL             P2_1
+	B:00A0H            SYMBOL             P2_0
+	B:0097H            SYMBOL             P1_7
+	B:0096H            SYMBOL             P1_6
+	B:0095H            SYMBOL             P1_5
+	B:0094H            SYMBOL             P1_4
+	B:0093H            SYMBOL             P1_3
+	B:0092H            SYMBOL             P1_2
+	B:0091H            SYMBOL             P1_1
+	B:0090H            SYMBOL             P1_0
+	B:0087H            SYMBOL             P0_7
+	B:0086H            SYMBOL             P0_6
+	B:0085H            SYMBOL             P0_5
+	B:0084H            SYMBOL             P0_4
+	B:0083H            SYMBOL             P0_3
+	B:0082H            SYMBOL             P0_2
+	B:0081H            SYMBOL             P0_1
+	B:0080H            SYMBOL             P0_0
+	B:00A3H            SYMBOL             D2
+	B:00A2H            SYMBOL             D1
+	B:00A1H            SYMBOL             K2
+	B:00A0H            SYMBOL             K1
+	D:00FFH            SYMBOL             VDM0CN
+	D:00FEH            SYMBOL             PCA0CPH4
+	D:00FDH            SYMBOL             PCA0CPL4
+	D:00FCH            SYMBOL             PCA0CPH0
+	D:00FBH            SYMBOL             PCA0CPL0
+	D:00FAH            SYMBOL             PCA0H
+	D:00F9H            SYMBOL             PCA0L
+	D:00F8H            SYMBOL             SPI0CN
+	D:00F7H            SYMBOL             EIP2
+	D:00F6H            SYMBOL             EIP1
+	D:00F5H            SYMBOL             P4MDIN
+	D:00F4H            SYMBOL             P3MDIN
+	D:00F3H            SYMBOL             P2MDIN
+	D:00F2H            SYMBOL             P1MDIN
+	D:00F1H            SYMBOL             P0MDIN
+	D:00F0H            SYMBOL             B
+	D:00EFH            SYMBOL             RSTSRC
+	D:00EEH            SYMBOL             PCA0CPH3
+	D:00EDH            SYMBOL             PCA0CPL3
+	D:00ECH            SYMBOL             PCA0CPH2
+	D:00EBH            SYMBOL             PCA0CPL2
+	D:00EAH            SYMBOL             PCA0CPH1
+	D:00E9H            SYMBOL             PCA0CPL1
+	D:00E8H            SYMBOL             ADC0CN
+	D:00E7H            SYMBOL             EIE2
+	D:00E6H            SYMBOL             EIE1
+	D:00E5H            SYMBOL             SMOD1
+	D:00E4H            SYMBOL             IT01CF
+	D:00E3H            SYMBOL             XBR2
+	D:00E2H            SYMBOL             XBR1
+	D:00E1H            SYMBOL             XBR0
+	D:00E0H            SYMBOL             ACC
+	D:00DFH            SYMBOL             P3SKIP
+	D:00DEH            SYMBOL             PCA0CPM4
+	D:00DDH            SYMBOL             PCA0CPM3
+	D:00DCH            SYMBOL             PCA0CPM2
+	D:00DBH            SYMBOL             PCA0CPM1
+	D:00DAH            SYMBOL             PCA0CPM0
+	D:00D9H            SYMBOL             PCA0MD
+	D:00D8H            SYMBOL             PCA0CN
+	D:00D7H            SYMBOL             USB0XCN
+	D:00D6H            SYMBOL             P2SKIP
+	D:00D5H            SYMBOL             P1SKIP
+	D:00D4H            SYMBOL             P0SKIP
+	D:00D3H            SYMBOL             SBUF1
+	D:00D2H            SYMBOL             SCON1
+	D:00D1H            SYMBOL             REF0CN
+	D:00D0H            SYMBOL             PSW
+	D:00CDH            SYMBOL             TMR2H
+	D:00CCH            SYMBOL             TMR2L
+	D:00CBH            SYMBOL             TMR2RLH
+	D:00CAH            SYMBOL             TMR2RLL
+	D:00C9H            SYMBOL             REG0CN
+	D:00C8H            SYMBOL             TMR2CN
+	D:00C7H            SYMBOL             P4
+	D:00C6H            SYMBOL             ADC0LTH
+	D:00C5H            SYMBOL             ADC0LTL
+	D:00C4H            SYMBOL             ADC0GTH
+	D:00C3H            SYMBOL             ADC0GTL
+	D:00C2H            SYMBOL             SMB0DAT
+	D:00C1H            SYMBOL             SMB0CF
+	D:00C0H            SYMBOL             SMB0CN
+	D:00BEH            SYMBOL             ADC0H
+	D:00BDH            SYMBOL             ADC0L
+	D:00BCH            SYMBOL             ADC0CF
+	D:00BBH            SYMBOL             AMX0P
+	D:00BAH            SYMBOL             AMX0N
+	D:00B9H            SYMBOL             CLKMUL
+	D:00B8H            SYMBOL             IP
+	D:00B7H            SYMBOL             FLKEY
+	D:00B6H            SYMBOL             FLSCL
+	D:00B5H            SYMBOL             SBRLH1
+	D:00B4H            SYMBOL             SBRLL1
+	D:00B3H            SYMBOL             OSCICL
+	D:00B2H            SYMBOL             OSCICN
+	D:00B1H            SYMBOL             OSCXCN
+	D:00B0H            SYMBOL             P3
+	D:00AFH            SYMBOL             PFE0CN
+	D:00AEH            SYMBOL             P4MDOUT
+	D:00ACH            SYMBOL             SBCON1
+	D:00AAH            SYMBOL             EMI0CN
+	D:00A9H            SYMBOL             CLKSEL
+	D:00A8H            SYMBOL             IE
+	D:00A7H            SYMBOL             P3MDOUT
+	D:00A6H            SYMBOL             P2MDOUT
+	D:00A5H            SYMBOL             P1MDOUT
+	D:00A4H            SYMBOL             P0MDOUT
+	D:00A3H            SYMBOL             SPI0DAT
+	D:00A2H            SYMBOL             SPI0CKR
+	D:00A1H            SYMBOL             SPI0CFG
+	D:00A0H            SYMBOL             P2
+	D:009FH            SYMBOL             CPT0MX
+	D:009EH            SYMBOL             CPT1MX
+	D:009DH            SYMBOL             CPT0MD
+	D:009CH            SYMBOL             CPT1MD
+	D:009BH            SYMBOL             CPT0CN
+	D:009AH            SYMBOL             CPT1CN
+	D:0099H            SYMBOL             SBUF0
+	D:0098H            SYMBOL             SCON0
+	D:0097H            SYMBOL             USB0DAT
+	D:0096H            SYMBOL             USB0ADR
+	D:0095H            SYMBOL             TMR3H
+	D:0094H            SYMBOL             TMR3L
+	D:0093H            SYMBOL             TMR3RLH
+	D:0092H            SYMBOL             TMR3RLL
+	D:0091H            SYMBOL             TMR3CN
+	D:0090H            SYMBOL             P1
+	D:008FH            SYMBOL             PSCTL
+	D:008EH            SYMBOL             CKCON
+	D:008DH            SYMBOL             TH1
+	D:008CH            SYMBOL             TH0
+	D:008BH            SYMBOL             TL1
+	D:008AH            SYMBOL             TL0
+	D:0089H            SYMBOL             TMOD
+	D:0088H            SYMBOL             TCON
+	D:0087H            SYMBOL             PCON
+	D:0086H            SYMBOL             OSCLCN
+	D:0085H            SYMBOL             EMI0CF
+	D:0084H            SYMBOL             EMI0TC
+	D:0083H            SYMBOL             DPH
+	D:0082H            SYMBOL             DPL
+	D:0081H            SYMBOL             SP
+	D:0080H            SYMBOL             P0
+	-------            PROC               _warte100u
+	C:0663H            LINE#              32
+	C:0663H            LINE#              32
+	C:0663H            LINE#              35
+	C:066BH            LINE#              37
+	C:067AH            LINE#              35
+	C:0681H            LINE#              39
+	C:0681H            LINE#              39
+	-------            ENDPROC            _warte100u
+	-------            PROC               _LCDbefehl
+	C:0682H            LINE#              45
+	C:0682H            LINE#              45
+	C:0682H            LINE#              49
+	C:068AH            LINE#              50
+	C:068EH            LINE#              51
+	C:0690H            LINE#              52
+	C:0693H            LINE#              54
+	C:0698H            LINE#              55
+	C:069AH            LINE#              56
+	C:069DH            LINE#              59
+	C:06A0H            LINE#              76
+	-------            ENDPROC            _LCDbefehl
+	-------            PROC               initlcd
+	C:06A3H            LINE#              95
+	C:06A3H            LINE#              95
+	C:06A3H            LINE#              97
+	C:06A6H            LINE#              98
+	C:06A9H            LINE#              99
+	C:06B0H            LINE#              100
+	C:06B3H            LINE#              101
+	C:06B6H            LINE#              102
+	C:06B9H            LINE#              103
+	C:06BCH            LINE#              104
+	C:06BFH            LINE#              105
+	C:06C2H            LINE#              106
+	C:06C5H            LINE#              107
+	C:06C8H            LINE#              108
+	C:06CBH            LINE#              109
+	C:06D0H            LINE#              110
+	C:06D5H            LINE#              111
+	C:06D7H            LINE#              112
+	-------            ENDPROC            initlcd
+	-------            PROC               loeschenlcd
+	C:06DAH            LINE#              117
+	C:06DAH            LINE#              117
+	C:06DAH            LINE#              118
+	C:06DCH            LINE#              118
+	-------            ENDPROC            loeschenlcd
+	-------            PROC               _charlcd
+	C:06DFH            LINE#              124
+	C:06DFH            LINE#              124
+	C:06DFH            LINE#              129
+	C:06E7H            LINE#              131
+	C:06EBH            LINE#              132
+	C:06EDH            LINE#              133
+	C:06F1H            LINE#              135
+	C:06F6H            LINE#              136
+	C:06F8H            LINE#              137
+	C:06FCH            LINE#              140
+	C:0700H            LINE#              156
+	-------            ENDPROC            _charlcd
+	-------            PROC               _cursorpos
+	C:0703H            LINE#              164
+	C:0703H            LINE#              164
+	C:0703H            LINE#              165
+	C:0707H            LINE#              165
+	-------            ENDPROC            _cursorpos
+	-------            PROC               cursorhome
+	C:070AH            LINE#              170
+	C:070AH            LINE#              170
+	C:070AH            LINE#              171
+	C:070CH            LINE#              171
+	-------            ENDPROC            cursorhome
+	-------            PROC               _textlcd
+	D:0031H            SYMBOL             text
+	D:0034H            SYMBOL             zeile
+	C:070FH            LINE#              176
+	C:070FH            LINE#              176
+	C:0717H            LINE#              178
+	C:071FH            LINE#              179
+	C:0729H            LINE#              180
+	C:0733H            LINE#              181
+	C:073DH            LINE#              182
+	C:0748H            LINE#              184
+	C:075DH            LINE#              185
+	C:0766H            LINE#              188
+	C:0766H            LINE#              188
+	-------            ENDPROC            _textlcd
+	-------            ENDMOD             lcd
+	-------            MODULE             Heizungssystem
+	C:0000H            SYMBOL             _ICE_DUMMY_
+	C:1001H            PUBLIC             main
+	C:0FB1H            PUBLIC             ausgabe
+	C:0780H            PUBLIC             init
+	D:002DH            PUBLIC             maxTemp
+	D:0029H            PUBLIC             minTemp
+	D:0025H            PUBLIC             selectedTemp
+	D:0021H            PUBLIC             currentTemp
+	D:001DH            PUBLIC             step
+	D:001CH            PUBLIC             systemStatus
+	D:0008H            PUBLIC             buf
+	C:0767H            PUBLIC             Grundeinstellungen
+	B:00F8H            SYMBOL             SPIEN
+	B:00F9H            SYMBOL             TXBMT
+	B:00FAH            SYMBOL             NSSMD0
+	B:00FBH            SYMBOL             NSSMD1
+	B:00FCH            SYMBOL             RXOVRN
+	B:00FDH            SYMBOL             MODF
+	B:00FEH            SYMBOL             WCOL
+	B:00FFH            SYMBOL             SPIF
+	B:00E8H            SYMBOL             AD0CM0
+	B:00E9H            SYMBOL             AD0CM1
+	B:00EAH            SYMBOL             AD0CM2
+	B:00EBH            SYMBOL             AD0WINT
+	B:00ECH            SYMBOL             AD0BUSY
+	B:00EDH            SYMBOL             AD0INT
+	B:00EEH            SYMBOL             AD0TM
+	B:00EFH            SYMBOL             AD0EN
+	B:00D8H            SYMBOL             CCF0
+	B:00D9H            SYMBOL             CCF1
+	B:00DAH            SYMBOL             CCF2
+	B:00DBH            SYMBOL             CCF3
+	B:00DCH            SYMBOL             CCF4
+	B:00DEH            SYMBOL             CR
+	B:00DFH            SYMBOL             CF
+	B:00D0H            SYMBOL             P
+	B:00D1H            SYMBOL             F1
+	B:00D2H            SYMBOL             OV
+	B:00D3H            SYMBOL             RS0
+	B:00D4H            SYMBOL             RS1
+	B:00D5H            SYMBOL             F0
+	B:00D6H            SYMBOL             AC
+	B:00D7H            SYMBOL             CY
+	B:00C8H            SYMBOL             T2XCLK
+	B:00CAH            SYMBOL             TR2
+	B:00CBH            SYMBOL             T2SPLIT
+	B:00CCH            SYMBOL             T2SOF
+	B:00CDH            SYMBOL             TF2LEN
+	B:00CEH            SYMBOL             TF2L
+	B:00CFH            SYMBOL             TF2H
+	B:00C0H            SYMBOL             SI
+	B:00C1H            SYMBOL             ACK
+	B:00C2H            SYMBOL             ARBLOST
+	B:00C3H            SYMBOL             ACKRQ
+	B:00C4H            SYMBOL             STO
+	B:00C5H            SYMBOL             STA
+	B:00C6H            SYMBOL             TXMODE
+	B:00C7H            SYMBOL             MASTER
+	B:00B8H            SYMBOL             PX0
+	B:00B9H            SYMBOL             PT0
+	B:00BAH            SYMBOL             PX1
+	B:00BBH            SYMBOL             PT1
+	B:00BCH            SYMBOL             PS0
+	B:00BDH            SYMBOL             PT2
+	B:00BEH            SYMBOL             PSPI0
+	B:00A8H            SYMBOL             EX0
+	B:00A9H            SYMBOL             ET0
+	B:00AAH            SYMBOL             EX1
+	B:00ABH            SYMBOL             ET1
+	B:00ACH            SYMBOL             ES0
+	B:00ADH            SYMBOL             ET2
+	B:00AEH            SYMBOL             ESPI0
+	B:00AFH            SYMBOL             EA
+	B:0098H            SYMBOL             RI0
+	B:0099H            SYMBOL             TI0
+	B:009AH            SYMBOL             RB80
+	B:009BH            SYMBOL             TB80
+	B:009CH            SYMBOL             REN0
+	B:009DH            SYMBOL             MCE0
+	B:009FH            SYMBOL             S0MODE
+	B:0088H            SYMBOL             IT0
+	B:0089H            SYMBOL             IE0
+	B:008AH            SYMBOL             IT1
+	B:008BH            SYMBOL             IE1
+	B:008CH            SYMBOL             TR0
+	B:008DH            SYMBOL             TF0
+	B:008EH            SYMBOL             TR1
+	B:008FH            SYMBOL             TF1
+	B:00B7H            SYMBOL             P3_7
+	B:00B6H            SYMBOL             P3_6
+	B:00B5H            SYMBOL             P3_5
+	B:00B4H            SYMBOL             P3_4
+	B:00B3H            SYMBOL             P3_3
+	B:00B2H            SYMBOL             P3_2
+	B:00B1H            SYMBOL             P3_1
+	B:00B0H            SYMBOL             P3_0
+	B:00A7H            SYMBOL             P2_7
+	B:00A6H            SYMBOL             P2_6
+	B:00A5H            SYMBOL             P2_5
+	B:00A4H            SYMBOL             P2_4
+	B:00A3H            SYMBOL             P2_3
+	B:00A2H            SYMBOL             P2_2
+	B:00A1H            SYMBOL             P2_1
+	B:00A0H            SYMBOL             P2_0
+	B:0097H            SYMBOL             P1_7
+	B:0096H            SYMBOL             P1_6
+	B:0095H            SYMBOL             P1_5
+	B:0094H            SYMBOL             P1_4
+	B:0093H            SYMBOL             P1_3
+	B:0092H            SYMBOL             P1_2
+	B:0091H            SYMBOL             P1_1
+	B:0090H            SYMBOL             P1_0
+	B:0087H            SYMBOL             P0_7
+	B:0086H            SYMBOL             P0_6
+	B:0085H            SYMBOL             P0_5
+	B:0084H            SYMBOL             P0_4
+	B:0083H            SYMBOL             P0_3
+	B:0082H            SYMBOL             P0_2
+	B:0081H            SYMBOL             P0_1
+	B:0080H            SYMBOL             P0_0
+	B:00A3H            SYMBOL             D2
+	B:00A2H            SYMBOL             D1
+	B:00A1H            SYMBOL             K2
+	B:00A0H            SYMBOL             K1
+	D:00FFH            SYMBOL             VDM0CN
+	D:00FEH            SYMBOL             PCA0CPH4
+	D:00FDH            SYMBOL             PCA0CPL4
+	D:00FCH            SYMBOL             PCA0CPH0
+	D:00FBH            SYMBOL             PCA0CPL0
+	D:00FAH            SYMBOL             PCA0H
+	D:00F9H            SYMBOL             PCA0L
+	D:00F8H            SYMBOL             SPI0CN
+	D:00F7H            SYMBOL             EIP2
+	D:00F6H            SYMBOL             EIP1
+	D:00F5H            SYMBOL             P4MDIN
+	D:00F4H            SYMBOL             P3MDIN
+	D:00F3H            SYMBOL             P2MDIN
+	D:00F2H            SYMBOL             P1MDIN
+	D:00F1H            SYMBOL             P0MDIN
+	D:00F0H            SYMBOL             B
+	D:00EFH            SYMBOL             RSTSRC
+	D:00EEH            SYMBOL             PCA0CPH3
+	D:00EDH            SYMBOL             PCA0CPL3
+	D:00ECH            SYMBOL             PCA0CPH2
+	D:00EBH            SYMBOL             PCA0CPL2
+	D:00EAH            SYMBOL             PCA0CPH1
+	D:00E9H            SYMBOL             PCA0CPL1
+	D:00E8H            SYMBOL             ADC0CN
+	D:00E7H            SYMBOL             EIE2
+	D:00E6H            SYMBOL             EIE1
+	D:00E5H            SYMBOL             SMOD1
+	D:00E4H            SYMBOL             IT01CF
+	D:00E3H            SYMBOL             XBR2
+	D:00E2H            SYMBOL             XBR1
+	D:00E1H            SYMBOL             XBR0
+	D:00E0H            SYMBOL             ACC
+	D:00DFH            SYMBOL             P3SKIP
+	D:00DEH            SYMBOL             PCA0CPM4
+	D:00DDH            SYMBOL             PCA0CPM3
+	D:00DCH            SYMBOL             PCA0CPM2
+	D:00DBH            SYMBOL             PCA0CPM1
+	D:00DAH            SYMBOL             PCA0CPM0
+	D:00D9H            SYMBOL             PCA0MD
+	D:00D8H            SYMBOL             PCA0CN
+	D:00D7H            SYMBOL             USB0XCN
+	D:00D6H            SYMBOL             P2SKIP
+	D:00D5H            SYMBOL             P1SKIP
+	D:00D4H            SYMBOL             P0SKIP
+	D:00D3H            SYMBOL             SBUF1
+	D:00D2H            SYMBOL             SCON1
+	D:00D1H            SYMBOL             REF0CN
+	D:00D0H            SYMBOL             PSW
+	D:00CDH            SYMBOL             TMR2H
+	D:00CCH            SYMBOL             TMR2L
+	D:00CBH            SYMBOL             TMR2RLH
+	D:00CAH            SYMBOL             TMR2RLL
+	D:00C9H            SYMBOL             REG0CN
+	D:00C8H            SYMBOL             TMR2CN
+	D:00C7H            SYMBOL             P4
+	D:00C6H            SYMBOL             ADC0LTH
+	D:00C5H            SYMBOL             ADC0LTL
+	D:00C4H            SYMBOL             ADC0GTH
+	D:00C3H            SYMBOL             ADC0GTL
+	D:00C2H            SYMBOL             SMB0DAT
+	D:00C1H            SYMBOL             SMB0CF
+	D:00C0H            SYMBOL             SMB0CN
+	D:00BEH            SYMBOL             ADC0H
+	D:00BDH            SYMBOL             ADC0L
+	D:00BCH            SYMBOL             ADC0CF
+	D:00BBH            SYMBOL             AMX0P
+	D:00BAH            SYMBOL             AMX0N
+	D:00B9H            SYMBOL             CLKMUL
+	D:00B8H            SYMBOL             IP
+	D:00B7H            SYMBOL             FLKEY
+	D:00B6H            SYMBOL             FLSCL
+	D:00B5H            SYMBOL             SBRLH1
+	D:00B4H            SYMBOL             SBRLL1
+	D:00B3H            SYMBOL             OSCICL
+	D:00B2H            SYMBOL             OSCICN
+	D:00B1H            SYMBOL             OSCXCN
+	D:00B0H            SYMBOL             P3
+	D:00AFH            SYMBOL             PFE0CN
+	D:00AEH            SYMBOL             P4MDOUT
+	D:00ACH            SYMBOL             SBCON1
+	D:00AAH            SYMBOL             EMI0CN
+	D:00A9H            SYMBOL             CLKSEL
+	D:00A8H            SYMBOL             IE
+	D:00A7H            SYMBOL             P3MDOUT
+	D:00A6H            SYMBOL             P2MDOUT
+	D:00A5H            SYMBOL             P1MDOUT
+	D:00A4H            SYMBOL             P0MDOUT
+	D:00A3H            SYMBOL             SPI0DAT
+	D:00A2H            SYMBOL             SPI0CKR
+	D:00A1H            SYMBOL             SPI0CFG
+	D:00A0H            SYMBOL             P2
+	D:009FH            SYMBOL             CPT0MX
+	D:009EH            SYMBOL             CPT1MX
+	D:009DH            SYMBOL             CPT0MD
+	D:009CH            SYMBOL             CPT1MD
+	D:009BH            SYMBOL             CPT0CN
+	D:009AH            SYMBOL             CPT1CN
+	D:0099H            SYMBOL             SBUF0
+	D:0098H            SYMBOL             SCON0
+	D:0097H            SYMBOL             USB0DAT
+	D:0096H            SYMBOL             USB0ADR
+	D:0095H            SYMBOL             TMR3H
+	D:0094H            SYMBOL             TMR3L
+	D:0093H            SYMBOL             TMR3RLH
+	D:0092H            SYMBOL             TMR3RLL
+	D:0091H            SYMBOL             TMR3CN
+	D:0090H            SYMBOL             P1
+	D:008FH            SYMBOL             PSCTL
+	D:008EH            SYMBOL             CKCON
+	D:008DH            SYMBOL             TH1
+	D:008CH            SYMBOL             TH0
+	D:008BH            SYMBOL             TL1
+	D:008AH            SYMBOL             TL0
+	D:0089H            SYMBOL             TMOD
+	D:0088H            SYMBOL             TCON
+	D:0087H            SYMBOL             PCON
+	D:0086H            SYMBOL             OSCLCN
+	D:0085H            SYMBOL             EMI0CF
+	D:0084H            SYMBOL             EMI0TC
+	D:0083H            SYMBOL             DPH
+	D:0082H            SYMBOL             DPL
+	D:0081H            SYMBOL             SP
+	D:0080H            SYMBOL             P0
+	D:0081H            SYMBOL             __SP__
+	-------            PROC               Grundeinstellungen
+	C:0767H            LINE#              7
+	C:0767H            LINE#              7
+	C:0767H            LINE#              9
+	C:076AH            LINE#              11
+	C:076DH            LINE#              17
+	C:0770H            LINE#              18
+	C:0773H            LINE#              19
+	C:0776H            LINE#              20
+	C:0779H            LINE#              21
+	C:077CH            LINE#              24
+	C:077FH            LINE#              14
+	C:077FH            LINE#              14
+	-------            ENDPROC            Grundeinstellungen
+	-------            PROC               init
+	C:0780H            LINE#              36
+	C:0780H            LINE#              36
+	C:0780H            LINE#              38
+	C:078BH            LINE#              39
+	C:078BH            LINE#              39
+	-------            ENDPROC            init
+	-------            PROC               ausgabe
+	C:0FB1H            LINE#              41
+	C:0FB1H            LINE#              41
+	C:0FB1H            LINE#              44
+	C:0FCEH            LINE#              47
+	C:0FD9H            LINE#              48
+	C:0FF6H            LINE#              49
+	C:0FFEH            LINE#              50
+	-------            ENDPROC            ausgabe
+	-------            PROC               main
+	C:1001H            LINE#              55
+	C:1001H            LINE#              55
+	C:1001H            LINE#              57
+	C:1004H            LINE#              58
+	C:1007H            LINE#              59
+	C:100AH            LINE#              60
+	C:100DH            LINE#              64
+	C:1010H            LINE#              66
+	C:1013H            LINE#              68
+	C:1036H            LINE#              70
+	C:1051H            LINE#              72
+	C:1054H            LINE#              75
+	C:1057H            LINE#              77
+	C:107AH            LINE#              79
+	C:1095H            LINE#              81
+	C:1098H            LINE#              86
+	C:109EH            LINE#              88
+	C:10A7H            LINE#              89
+	C:10AAH            LINE#              92
+	-------            ENDPROC            main
+	-------            ENDMOD             Heizungssystem
+	C:01A2H            PUBLIC             ?ADDIEEE
+	C:0199H            PUBLIC             ?SUBBIEEE
+	C:019FH            PUBLIC             ?ADDIEEEX
+	C:0196H            PUBLIC             ?SUBBIEEEX
+	C:0800H            PUBLIC             ?printf?FP
+	C:0808H            PUBLIC             ?sprintf?FP
+	C:0300H            PUBLIC             ?DIVIIEEE
+	C:02FDH            PUBLIC             ?DIVIIEEEX
+	C:041DH            PUBLIC             __IEEE_TRAP_NAN__
+	C:0428H            PUBLIC             __IEEE_END_RESULT__
+	C:0421H            PUBLIC             __IEEE_RESULT_NULL__
+	C:042EH            PUBLIC             _END_OP_IEEE?C
+	C:0415H            PUBLIC             __IEEE_TRAP_DEB__
+	C:043FH            PUBLIC             __IEEE_GET_EXP_SET_MANT__
+	C:0489H            PUBLIC             ?POWER_10_NEG
+	C:04C7H            PUBLIC             ?COMPIEEE
+	C:050EH            PUBLIC             ?MULTIEEEX
+	C:0511H            PUBLIC             ?MULTIEEE
+	C:0130H            PUBLIC             ?C_START1
+	C:001CH            PUBLIC             IPGN1?C
+	C:0047H            PUBLIC             XPGN0INC?C
+	C:004BH            PUBLIC             XPGN1INC?C
+	C:004FH            PUBLIC             IPGN0INC?C
+	C:0053H            PUBLIC             __PGN0_INC__
+	C:0059H            PUBLIC             __PGN1_INC__
+	C:0003H            PUBLIC             MV4_RG2SK?C
+	C:005FH            PUBLIC             MV4_XD2RG?C
+	C:011DH            PUBLIC             _putchar
+	C:00CEH            PUBLIC             ?strlen
+	D:00A0H            PUBLIC             HPD_ADDR
+	C:07B5H            PUBLIC             ?C_INITSEGSTART
+	N:007FH            PUBLIC             IDATALEN
+	N:00FFH            PUBLIC             _INITP2?
+	C:006BH            PUBLIC             XPGN0?C
+	C:0087H            PUBLIC             XPGN1?C
+	C:00A3H            PUBLIC             IPGN0?C
+
+UNCALLED SEGMENTS:
+------------------
+    ?PR?cursorhome?LCD: Function cursorhome in file E:\MICROCONTROLLER_C\SMART HOME\LCD.OBJ was n&
+ot called
+
+----------------------
+SUGGESTED OPTIMIZATION
+----------------------
+Warning: 74 (4AH) data bytes in the range [00H-80H] are available for storage.
+         Consider using some of these for 'data' variables in your source files.
+
+
+LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.
+

@@ -1,0 +1,28 @@
+
+<ApplicationBuild Header="Heizungssystem" Extern=".\Heizungssystem.rapp" Path=".\Heizungssystem.rapp" AsyncBuild="" OutputFile=".\Heizungssystem.aof" sate="96" >
+	<NodeC Path=".\lcd.c" Header="lcd.c" Marker="-1" AsyncBuild="" OutputFile=".\lcd.obj" sate="2" />
+	<NodeC Path=".\Heizungssystem.c" Header="Heizungssystem.c" Marker="-1" AsyncBuild="" OutputFile=".\Heizungssystem.obj" sate="0" />
+	<Options>
+		<Config Header="Standard" >
+			<Set Header="ApplicationBuild" >
+				<Section Header="General" >
+					<Property Header="TargetFamily" Value="80C51" />
+																
+				</Section>
+												
+			</Set>
+			<Set Header="Target" >
+				<Section Header="Processor80C51" >
+					<Property Header="Processor" Value="C8051F340" Removable="1" />
+																
+				</Section>
+				<Section Header="ToolSet80C51" >
+					<Property Header="BuildToolSet80C51" Value="80C51\\RaisonanceTools.config" Removable="1" />
+					<Property Header="ArelocInfo" Value="" Removable="1" />
+							
+				</Section>
+					
+			</Set>
+		</Config>
+	</Options>
+</ApplicationBuild>
