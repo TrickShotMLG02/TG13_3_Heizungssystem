@@ -2,12 +2,12 @@
 *.d
 
 # Other
-.BIN
+.bin
 .ctx
-.XML
-.AOF
-.M51
-.XRF
+.xml
+.aof
+.m51
+.xrf
 .dbi
 .lst
 .xdb
