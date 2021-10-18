@@ -1,4 +1,0 @@
-
-<Project Header="Project 'Heizungssystem'" Path=".\Heizungssystem.rprj" Project="Yes" AsyncBuild="" OutputFile="" sate="96" ActiveApp="Heizungssystem" >
-	<ApplicationBuild Header="Heizungssystem" Extern=".\Heizungssystem.rapp" Path=".\Heizungssystem.rapp" AsyncBuild="" OutputFile=".\Heizungssystem.aof" sate="96" />
-</Project>
