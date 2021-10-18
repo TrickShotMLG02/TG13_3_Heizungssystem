@@ -1,0 +1,352 @@
+RC51 COMPILER V03.08.10.309,  HEIZUNGSSYSTEM     10/18/21  10:46:03  PAGE  1
+
+QCW(0x00002F32)
+
+DOS RC51 COMPILER V03.08.10.309, COMPILATION OF MODULE HEIZUNGSSYSTEM
+OBJECT MODULE PLACED IN E:\Microcontroller_C\Smart Home\Heizungssystem.obj
+COMPILER INVOKED BY: QUIET GENERATEDEPFILE OJ(E:\Microcontroller_C\Smart Home\He
+            -izungssystem.obj) PIN(C:\Raisonance\Ride\Inc;C:\Raisonance\Ride\Inc
+            -\51) PIN(C:\Raisonance\Ride\\inc\51\SiLabs) NOAM CD PR(E:\Microcont
+            -roller_C\Smart Home\Heizungssystem.lst) FP(NOFLOAT) IP NOIS UNSIGNE
+            -DCHAR ET(CHAR) PR PL(60) PW(80) OE(1) OT(7,SPEED) RB(0) MAXERR(25) 
+            -MAXWAR(25) SM MOD517(NODP8,NOAU) 
+
+stmt level    source
+   1          /*
+   2           Name:          Tim Schlachter / Anton Tran
+   3           Klasse.        TG13/3
+   4           Datum:         20.09.2021
+   5           Aufgabe:   	Heizungssystem
+   6           Controller:    C8051F340
+   7           
+   8           Beschreibung:
+   9              Ziel ist es ein Heizungssystem zu ertellen, bei dem eine Richt
+            -temperatur
+  10              mit Hilfe von 2 Tastern eingestellt werden kann. Das System ve
+            -rsucht diese
+  11              Temperatur konstant zu halten, sofern das System mit dem Ansch
+            -alter aktiviert
+  12              wurde. Die Richttemperatur und die derzeitige Temperatur wird 
+            -auf einem LCD-Display
+  13              angezeigt. Die Heizfunktion wird druch eine rote LED und die K
+            -ühlfunktion durch eine
+  14              blaue LED dargestellt.
+  15              
+  16              - Spannung temperatursensor messen
+  17              - ADC Auflösung: 0,019V pro bit
+  18          	https://sensorkit.joy-it.net/de/sensors/ky-013
+  19           */
+  20          
+  21           //---------------------------------------------------------------
+            ---------------
+  22           // Include Dateien
+  23           //---------------------------------------------------------------
+            ---------------
+  24          #include <stdio.h>									// für sprinf		
+  25          #include <C_8051F340.h>                //Erweiterte SFR Zuordnunge
+            -n
+  26          #include <Einstellungen.h>             //beinhaltet die Funktion G
+            -rundeinstellungen
+  27          
+  28          //----------------------------------------------------------------
+            --------------
+  29          // Pin/Port Zuweisungen
+  30          //----------------------------------------------------------------
+            --------------
+  31          unsigned char buf [20] ;	        // Zwischenspeicher für LCD-Text
+  32          
+  33          unsigned char systemStatus = 1;     // Systemstatus: 1 -> an, 0 ->
+            - aus
+  34          
+  35          double step = 0.5;                  // Schrittgrösse
+RC51 COMPILER V03.08.10.309,  HEIZUNGSSYSTEM     10/18/21  10:46:03  PAGE  2
+
+  36          
+  37          double currentTemp = 21;            // Derzeitige Temperatur 
+  38          double selectedTemp = 21;           // Ausgewählte Temperatur 
+  39          
+  40          double minTemp = 15;                // Untere Temperaturgrenze
+  41          double maxTemp = 30;                // Obere Temperaturgrenze
+  42          
+  43          unsigned int i = 0;
+  44          
+  45          //----------------------------------------------------------------
+            --------------
+  46          // Eigene Funktionen
+  47          //----------------------------------------------------------------
+            --------------
+  48          
+  49          // externe Funktionen in lcd.c; Diese Datei zum Projekt hinzufügen
+            -
+  50          extern void initlcd (void);						//	Initialisierung LCD-Display an
+            - P0			
+  51          extern void loeschenlcd (void);
+  52          extern void textlcd (unsigned char *text,unsigned char zeile);
+  53          
+  54          void init(void)
+  55          {
+  56   1      	selectedTemp = 21;
+  57   1      }
+  58          
+  59          void ausgabe(void)
+  60          {
+  61   1          //LCD Display
+  62   1          sprintf (buf,"Derzeitige Temperatur: %d°",currentTemp);
+  63   1      	// Text mit Variable formatieren und in buf kopieren		
+  64   1      	//	% Ausgabeformat folgt, d Dezimalzahl mit Vorzeichen, a auszuge
+            -bende Variable	
+  65   1      	textlcd (buf,1);
+  66   1          sprintf (buf,"Sollwert: %d°",selectedTemp);
+  67   1        	textlcd (buf,2);
+  68   1      }
+  69          
+  70          unsigned int readTemperatur()
+  71          {
+  72   1              int i = 0;
+  73   1              P1_1 = 1;
+  74   1              P1_2 = 0;
+  75   1              P1_2 = 1;
+  76   1              for (i = 0; i < 5000; i++)
+  77   1              P1_1 = 0;
+  78   1              return P2;
+  79   1      }
+  80          
+  81          //----------------------------------------------------------------
+            --------------
+  82          // Hauptprogramm
+  83          //----------------------------------------------------------------
+            --------------
+  84          void main(void)
+  85          {
+  86   1      	Grundeinstellungen();		    //  Siehe Datei Einstellungen.h
+RC51 COMPILER V03.08.10.309,  HEIZUNGSSYSTEM     10/18/21  10:46:03  PAGE  5
+
+  87   1          initlcd ();						//	Initialisierung LCD-Display an P3
+  88   1       	loeschenlcd ();				    //	Anzeige löschen	
+  89   1          init();
+  90   1      
+  91   1          P2MDOUT = 0;
+  92   1          P2 = 255;
+  93   1      
+  94   1          P3 = 0;
+  95   1          P1_0 = 0;
+  96   1      
+  97   1      
+  98   1          while(1)
+  99   1          {
+ 100   2          /*
+ 101   2              int i = 0;
+ 102   2              P1_1 = 1;
+ 103   2              P1_2 = 0;
+ 104   2              P1_2 = 1;
+ 105   2              for (i = 0; i < 5000; i++)
+ 106   2              P1_1 = 0;
+ 107   2              P3 = P2;
+ 108   2          */
+ 109   2          
+ 110   2          P3 = readTemperatur();
+ 111   2          
+ 112   2          }
+ 113   1              
+ 114   1      
+ 115   1      /*
+ 116   1      	while (1)
+ 117   1      	{
+ 118   1      		ausgabe();
+ 119   1              P3 = readTemperatur();
+ 120   1      		if (!P3_1)				//Plus
+ 121   1      		{
+ 122   1                  if (selectedTemp <= (maxTemp - step))
+ 123   1                  {
+ 124   1                      selectedTemp += step;
+ 125   1                  }
+ 126   1      			while (!P3_1);		//Warten bis Taster losgelassen
+ 127   1      		}
+ 128   1      
+ 129   1          
+ 130   1      		if (!P3_2)				//Minus
+ 131   1      		{
+ 132   1      			if (selectedTemp >= (minTemp + step))
+ 133   1                  {
+ 134   1                      selectedTemp -= step;
+ 135   1                  }
+ 136   1      			while (!P3_2);		//Warten bis Taster losgelassen
+ 137   1      		}
+ 138   1          
+ 139   1          
+ 140   1              // An / Aus
+ 141   1              if (!P3_3)
+ 142   1              {
+ 143   1                 systemStatus = !systemStatus; 
+ 144   1                 while (!P3_3);		//Warten bis Taster losgelassen
+RC51 COMPILER V03.08.10.309,  HEIZUNGSSYSTEM     10/18/21  10:46:03  PAGE  6
+
+ 145   1              }
+ 146   1      	}
+ 147   1      */
+ 148   1      }
+RC51 COMPILER V03.08.10.309,  HEIZUNGSSYSTEM     10/18/21  10:46:03  PAGE  7
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+            ; FUNCTION Grundeinstellungen (BEGIN)
+                                           ; SOURCE LINE # 9 
+0000 75B283         MOV    OSCICN,#083H
+                                           ; SOURCE LINE # 11 
+0003 75D900         MOV    PCA0MD,#000H
+                                           ; SOURCE LINE # 17 
+0006 75A4FF         MOV    P0MDOUT,#0FFH
+                                           ; SOURCE LINE # 18 
+0009 75A5FF         MOV    P1MDOUT,#0FFH
+                                           ; SOURCE LINE # 19 
+000C 75A6FF         MOV    P2MDOUT,#0FFH
+                                           ; SOURCE LINE # 20 
+000F 75A7FF         MOV    P3MDOUT,#0FFH
+                                           ; SOURCE LINE # 21 
+0012 75AEFF         MOV    P4MDOUT,#0FFH
+                                           ; SOURCE LINE # 24 
+0015 75E240         MOV    XBR1,#040H
+                                           ; SOURCE LINE # 26 
+0018 22             RET    
+
+            ; FUNCTION Grundeinstellungen (END)
+
+            ; FUNCTION init (BEGIN)
+                                           ; SOURCE LINE # 56 
+0000 E4             CLR    A
+0001 F500    R      MOV    selectedTemp,A
+0003 F500    R      MOV    selectedTemp+01H,A
+0005 7500A8  R      MOV    selectedTemp+02H,#0A8H
+0008 750041  R      MOV    selectedTemp+03H,#041H
+                                           ; SOURCE LINE # 57 
+000B 22             RET    
+
+            ; FUNCTION init (END)
+
+            ; FUNCTION ausgabe (BEGIN)
+                                           ; SOURCE LINE # 62 
+0000 C000    R      PUSH   currentTemp
+0002 C000    R      PUSH   currentTemp+01H
+0004 C000    R      PUSH   currentTemp+02H
+0006 C000    R      PUSH   currentTemp+03H
+0008 7B01           MOV    R3,#001H
+000A E4             CLR    A
+000B FA             MOV    R2,A
+000C 7900    R      MOV    R1,#buf
+000E 7D05           MOV    R5,#005H
+0010 7C00    R      MOV    R4,#HIGH(?STR?HEIZUNGSSYSTEM?BASE)
+0012 7800    R      MOV    R0,#LOW(?STR?HEIZUNGSSYSTEM?BASE)
+0014 120000  R      LCALL  ?sprintf
+0017 74FC           MOV    A,#0FCH
+0019 2581           ADD    A,SP
+001B F581           MOV    SP,A
+                                           ; SOURCE LINE # 65 
+001D 7B01           MOV    R3,#001H
+001F 7900    R      MOV    R1,#buf
+0021 E4             CLR    A
+0022 FA             MOV    R2,A
+0023 7D01           MOV    R5,#001H
+0025 120000  R      LCALL  _textlcd
+RC51 COMPILER V03.08.10.309,  HEIZUNGSSYSTEM     10/18/21  10:46:03  PAGE  3
+
+                                           ; SOURCE LINE # 66 
+0028 C000    R      PUSH   selectedTemp
+002A C000    R      PUSH   selectedTemp+01H
+002C C000    R      PUSH   selectedTemp+02H
+002E C000    R      PUSH   selectedTemp+03H
+0030 7B01           MOV    R3,#001H
+0032 7900    R      MOV    R1,#buf
+0034 E4             CLR    A
+0035 FA             MOV    R2,A
+0036 7D05           MOV    R5,#005H
+0038 7C00    R      MOV    R4,#HIGH(?STR?HEIZUNGSSYSTEM?BASE + 01BH)
+003A 7800    R      MOV    R0,#LOW(?STR?HEIZUNGSSYSTEM?BASE + 01BH)
+003C 120000  R      LCALL  ?sprintf
+003F 74FC           MOV    A,#0FCH
+0041 2581           ADD    A,SP
+0043 F581           MOV    SP,A
+                                           ; SOURCE LINE # 67 
+0045 7B01           MOV    R3,#001H
+0047 7900    R      MOV    R1,#buf
+0049 E4             CLR    A
+004A FA             MOV    R2,A
+004B 7D02           MOV    R5,#002H
+004D 020000  R      LJMP   _textlcd
+
+            ; FUNCTION ausgabe (END)
+
+            ; FUNCTION readTemperatur (BEGIN)
+              ; R2R3 is assigned to i
+                                           ; SOURCE LINE # 73 
+0000 D291           SETB   P1_1
+                                           ; SOURCE LINE # 74 
+0002 C292           CLR    P1_2
+                                           ; SOURCE LINE # 75 
+0004 D292           SETB   P1_2
+              ; R4R5 is assigned to i
+                                           ; SOURCE LINE # 76 
+0006 E4             CLR    A
+0007 FC             MOV    R4,A
+0008 FD             MOV    R5,A
+0009         ?FOR1:
+                                           ; SOURCE LINE # 77 
+0009 C291           CLR    P1_1
+                                           ; SOURCE LINE # 76 
+000B 0D             INC    R5
+000C ED             MOV    A,R5
+000D 7001           JNZ    ?LAB10
+000F 0C             INC    R4
+0010         ?LAB10:
+0010 BC13F6         CJNE   R4,#013H,?FOR1
+0013 BD88F3         CJNE   R5,#088H,?FOR1
+                                           ; SOURCE LINE # 78 
+0016 E5A0           MOV    A,P2
+0018 FF             MOV    R7,A
+0019 7E00           MOV    R6,#000H
+                                           ; SOURCE LINE # 79 
+001B 22             RET    
+
+            ; FUNCTION readTemperatur (END)
+RC51 COMPILER V03.08.10.309,  HEIZUNGSSYSTEM     10/18/21  10:46:03  PAGE  4
+
+
+            ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 86 
+0000 120000  R      LCALL  Grundeinstellungen
+                                           ; SOURCE LINE # 87 
+0003 120000  R      LCALL  initlcd
+                                           ; SOURCE LINE # 88 
+0006 120000  R      LCALL  loeschenlcd
+                                           ; SOURCE LINE # 89 
+0009 120000  R      LCALL  init
+                                           ; SOURCE LINE # 91 
+000C 75A600         MOV    P2MDOUT,#000H
+                                           ; SOURCE LINE # 92 
+000F 75A0FF         MOV    P2,#0FFH
+                                           ; SOURCE LINE # 94 
+0012 75B000         MOV    P3,#000H
+                                           ; SOURCE LINE # 95 
+0015 C290           CLR    P1_0
+0017         ?WHILE1:
+                                           ; SOURCE LINE # 110 
+0017 120000  R      LCALL  readTemperatur
+001A 8FB0           MOV    P3,R7
+001C 80F9           SJMP   ?WHILE1
+
+            ; FUNCTION main (END)
+
+RC51 COMPILER V03.08.10.309,  HEIZUNGSSYSTEM     10/18/21  10:46:03  PAGE  8
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    175    ----
+   CONSTANT SIZE    =     41    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     43       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+RC51 COMPILATION COMPLETE.  0 WARNING,  0 ERROR
