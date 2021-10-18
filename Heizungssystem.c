@@ -4,6 +4,18 @@
  Datum:         20.09.2021
  Aufgabe:   	Heizungssystem
  Controller:    C8051F340
+ 
+ Beschreibung:
+    Ziel ist es ein Heizungssystem zu ertellen, bei dem eine Richttemperatur
+    mit Hilfe von 2 Tastern eingestellt werden kann. Das System versucht diese
+    Temperatur konstant zu halten, sofern das System mit dem Anschalter aktiviert
+    wurde. Die Richttemperatur und die derzeitige Temperatur wird auf einem LCD-Display
+    angezeigt. Die Heizfunktion wird druch eine rote LED und die Kühlfunktion durch eine
+    blaue LED dargestellt.
+    
+    - Spannung temperatursensor messen
+    - ADC Auflösung: 0,019V pro bit
+	https://sensorkit.joy-it.net/de/sensors/ky-013
  */
 
  //-----------------------------------------------------------------------------
@@ -27,6 +39,8 @@ double selectedTemp = 21;           // Ausgewählte Temperatur
 
 double minTemp = 15;                // Untere Temperaturgrenze
 double maxTemp = 30;                // Obere Temperaturgrenze
+
+unsigned int i = 0;
 
 //-----------------------------------------------------------------------------
 // Eigene Funktionen
@@ -53,20 +67,56 @@ void ausgabe(void)
   	textlcd (buf,2);
 }
 
+unsigned int readTemperatur()
+{
+        int i = 0;
+        P1_1 = 1;
+        P1_2 = 0;
+        P1_2 = 1;
+        for (i = 0; i < 5000; i++)
+        P1_1 = 0;
+        return P2;
+}
+
 //-----------------------------------------------------------------------------
 // Hauptprogramm
 //-----------------------------------------------------------------------------
 void main(void)
 {
-	Grundeinstellungen();		    //siehe Datei Einstellungen.h
+	Grundeinstellungen();		    //  Siehe Datei Einstellungen.h
     initlcd ();						//	Initialisierung LCD-Display an P3
  	loeschenlcd ();				    //	Anzeige löschen	
     init();
 
+    P2MDOUT = 0;
+    P2 = 255;
+
+    P3 = 0;
+    P1_0 = 0;
+
+
+    while(1)
+    {
+    /*
+        int i = 0;
+        P1_1 = 1;
+        P1_2 = 0;
+        P1_2 = 1;
+        for (i = 0; i < 5000; i++)
+        P1_1 = 0;
+        P3 = P2;
+    */
+    
+        P3 = readTemperatur();
+    
+    }
+        
+
+/*
 	while (1)
 	{
 		ausgabe();
-
+        P3 = readTemperatur();
 		if (!P3_1)				//Plus
 		{
             if (selectedTemp <= (maxTemp - step))
@@ -94,4 +144,5 @@ void main(void)
            while (!P3_3);		//Warten bis Taster losgelassen
         }
 	}
+*/
 }
